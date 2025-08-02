@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Customer Journey Time-to-Conversion Forecaster</title>
+  <link rel="stylesheet" href="style.css" />
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+  <div class="container">
+    <h1>Customer Journey Time-to-Conversion Forecaster</h1>
+    <form id="forecast-form">
+      <label>Acquisition Channel
+        <select id="channel">
+          <option>Paid Search</option>
+          <option>Organic</option>
+          <option>Email</option>
+          <option>Social</option>
+        </select>
+      </label>
+
+      <label>Number of Users Acquired
+        <input type="number" id="numUsers" required />
+      </label>
+
+      <label>Average Time to Convert (days)
+        <input type="number" id="avgTime" required />
+      </label>
+
+      <label>Standard Deviation (optional)
+        <input type="number" id="stdDev" />
+      </label>
+
+      <label>Start Date of Campaign
+        <input type="date" id="startDate" required />
+      </label>
+
+      <button type="submit">Generate Forecast</button>
+    </form>
+
+    <canvas id="forecastChart"></canvas>
+    <button id="downloadCsv">Download CSV</button>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
